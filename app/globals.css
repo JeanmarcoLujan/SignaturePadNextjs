@@ -16,12 +16,15 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.signatureCanvas {
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  max-width: 100%; /* Ensure the canvas doesn't exceed its container */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .signatureCanvas {
+    max-width: 90%; /* Reduce the canvas width on smaller screens */
+  }
 }

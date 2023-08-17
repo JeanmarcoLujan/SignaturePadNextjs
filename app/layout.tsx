@@ -1,6 +1,8 @@
+import { DataProvider } from '@/context/DataContext'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +18,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      
+      <body className={inter.className}>
+      <nav className="bg-gray-800 p-4">
+      <div className="max-w-8xl mx-auto">
+        <div className="flex items-center justify-between">
+          <Link className="text-white font-bold" href={"/"}>
+          <div className="text-white text-lg font-semibold">H&CO | Signature app</div>
+          </Link>
+          
+        </div>
+      </div>
+    </nav>
+      <DataProvider>{children}</DataProvider>
+        </body>
     </html>
   )
 }
